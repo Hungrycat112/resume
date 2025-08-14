@@ -1,0 +1,41 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.press2start {
+  font-family: 'Press Start 2P', cursive;
+}
+
+/* Pixel title utility */
+.pixel-title { font-family: "Press Start 2P", system-ui, sans-serif; letter-spacing: .02em; }
+
+/* A fixed 1280x720 design canvas that scales responsively */
+.login-canvas {
+  width: 1280px;
+  height: 720px;
+  position: relative;
+  background-size: cover;
+  background-position: center;
+}
+
+/* Center the canvas and scale it down on small screens */
+.login-wrapper {
+  display: grid;
+  place-items: center;
+  min-height: 100dvh;
+  overflow: hidden;
+}
+@media (max-width: 1280px) {
+  .login-canvas {
+    transform-origin: top left;
+    transform: scale(calc(100vw / 1280));
+  }
+}
+@media (max-height: 720px) {
+  .login-canvas {
+    transform-origin: top left;
+    transform: scale(min(calc(100vw / 1280), calc(100vh / 720)));
+  }
+}
