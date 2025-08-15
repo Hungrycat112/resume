@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 
-const BG = "/assets/img/blue.png";        // pixel blue background
-const DEGREE = "/assets/img/degree.png";  // little diploma icon
+const BG = "/assets/img/blue.png";
+const DEGREE = "/assets/img/degree.png";  
 
 /* ---------- Reusable bits ---------- */
 function Pill({ children }) {

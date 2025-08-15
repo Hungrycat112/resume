@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 
-const BG = "/assets/img/blue.png";        
-const ICON = "/assets/img/phone.png"; 
+const BG = asset("assets/img/blue.png");        
+const ICON = asset("assets/img/phone.png"); 
 const phone = "+1 (408) 386-9636";               
 const phoneHref = "tel:+14083869636";
 

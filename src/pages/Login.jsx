@@ -1,9 +1,10 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { playClick } from "../components/clickSound";
+import { asset } from "../utils/asset";
 
-const BG = "/assets/img/title_back.png";
-const AVATAR = "/assets/img/avatar_background_removed_exact.png";
+const BG = asset('assets/img/title_back.png');
+const AVATAR = asset('assets/img/avatar_background_removed_exact.png');
 const BASE_W = 1280;
 const BASE_H = 720;
 const TITLE_Y = 65;

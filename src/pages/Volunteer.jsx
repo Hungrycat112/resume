@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 
-const BG   = "/assets/img/green.png";             
-const ICON = "/assets/img/volunteer.png";         
+const BG = asset("assets/img/green.png");
+const ICON = asset("assets/img/volunteer.png");      
 
 /* ---------- Card ---------- */
 function VolunteerCard({ org, role, dates, bullets = [] }) {

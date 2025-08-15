@@ -1,9 +1,11 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import { asset } from "../utils/asset";
 
-const BG = "/assets/img/yellow.png";
-const TROPHY = "/assets/img/trophy.png";
-const CERT_PDF = "/assets/img/certification.pdf"; 
+
+const BG = asset("assets/img/yellow.png");
+const TROPHY = asset("assets/img/trophy.png");
+const CERT_PDF = asset("assets/img/certification.pdf"); 
 
 function AwardCard({ title, org, date, bullets = [], pdf }) {
   const [showPDF, setShowPDF] = useState(false);

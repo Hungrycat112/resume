@@ -1,7 +1,12 @@
-const CLICK_SRC = "/assets/audio/bubble-pop-04-323580.mp3"; 
+import { asset } from "../utils/asset";
+
+const CLICK_SRC = asset("assets/audio/bubble-pop-04-323580.mp3"); 
 let audio;
-export function playClick() {
-  if (!audio) audio = new Audio(CLICK_SRC);
-  audio.currentTime = 0; // restarts the sound each click
-  audio.play().catch(() => {});
-}
+export const playClick = () => {
+  try {
+    audio = audio || new Audio(clickUrl);
+    audio.currentTime = 0;
+    audio.volume = 0.25; 
+    audio.play();
+  } catch {}
+};

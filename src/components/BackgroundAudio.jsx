@@ -1,5 +1,7 @@
 import { useEffect, useRef, useState } from "react";
-const AUDIO_SRC = "/assets/audio/cottagecore-17463.mp3"; 
+import { asset } from "../utils/asset";
+
+const AUDIO_SRC = asset('assets/audio/cottagecore-17463.mp3');
 
 export default function BackgroundAudio() {
   const audioRef = useRef(null);
