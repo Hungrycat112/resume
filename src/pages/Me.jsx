@@ -1,13 +1,15 @@
 import { Link } from "react-router-dom";
 import { playClick } from "../components/clickSound";
-import CANVAS_IMG from "/assets/img/canvas.jpg";
+import { asset } from "../utils/asset";
+const CANVAS_IMG = asset("assets/img/canvas.jpg");
+
 
 export default function Me() {
   return (
     <div
       className="min-h-screen flex flex-col items-center justify-center p-6"
       style={{
-        backgroundImage: "url('/assets/img/blue.png')",
+        backgroundImage:`url(${asset("assets/img/blue.png")})`,
         backgroundSize: "cover",
         backgroundPosition: "center",
       }}

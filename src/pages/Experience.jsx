@@ -1,9 +1,9 @@
 import { Link } from "react-router-dom";
+import { asset } from "../utils/asset";         
 
-const BG = "/assets/img/green.png";
-const PLANT = "/assets/img/plant.png";
+const BG    = asset("assets/img/green.png");
+const PLANT = asset("assets/img/plant.png");
 
-/* ---------- Reusable Card ---------- */
 function ExperienceCard({ title, duration, bullets }) {
   return (
     <div className="w-full rounded-xl bg-white/90 shadow-md p-5 md:p-6">
@@ -27,8 +27,7 @@ function ExperienceCard({ title, duration, bullets }) {
 export default function Experience() {
   const items = [
     {
-      title:
-        "Machine Learning Research Assistant – San Jose State University",
+      title: "Machine Learning Research Assistant – San Jose State University",
       duration: "July 2025 – Present",
       bullets: [
         "Evaluated Mixture of Experts (MoE) models for classifying synthetic riboswitch sequences to detect SARS-CoV-2 in wastewater.",
@@ -61,8 +60,8 @@ export default function Experience() {
       bullets: [
         "Researched native California plants and organized biodiversity datasets in Google Sheets.",
         "Helped design an educational habitat garden for public awareness at West Valley College.",
-        "Cultivated partnerships with local nurseries, and helped coordinate the Annual Wildflower Show.",
-        "These efforts promoted ecological literacy, supported native plant conservation, and fostered community engagement in preserving California’s biodiversity."
+        "Cultivated partnerships with local nurseries; coordinated the Annual Wildflower Show.",
+        "Advanced ecological literacy and native plant conservation through community engagement.",
       ],
     },
     {
@@ -70,30 +69,26 @@ export default function Experience() {
       duration: "Mar 2021 – May 2022",
       bullets: [
         "Handled transactions and maintained efficient service in a high-volume setting.",
-        "Collaborated effectively to optimize peak-hour food delivery, contributing to a cohesive and efficient team environment."
+        "Collaborated effectively to optimize peak-hour delivery and team flow.",
       ],
     },
     {
       title: "Tennis Instructor – Brookside Club of Saratoga",
       duration: "Jun 2021 – Aug 2021",
-      bullets: [
-        "Coached children ages 5–12 through tennis drills and personalized instruction.",
-      ],
+      bullets: ["Coached children ages 5–12 through tennis drills and personalized instruction."],
     },
   ];
 
   return (
     <div
       className="min-h-dvh w-full bg-cover bg-center"
-      style={{ backgroundImage: `url('${BG}')` }}
+      style={{ backgroundImage: `url(${BG})` }}     
     >
-      <div className="mx-auto max-w-[1100px] px-4 py-6 md:py-10">
+      <div className="mx-auto max-w-[1150px] px-4 py-6 md:py-10">  {/* a bit wider */}
         {/* Header */}
         <div className="flex items-center gap-3">
-          <img src={PLANT} alt="" className="h-20 w-20 select-none" />
-          <h1 className="pixel-title text-2xl md:text-3xl text-black">
-            Experience
-          </h1>
+          <img src={PLANT} alt="" className="h-20 w-20 md:h-24 md:w-24 select-none" /> {/* bigger plant */}
+          <h1 className="pixel-title text-2xl md:text-3xl text-black">Experience</h1>
         </div>
 
         {/* Cards */}

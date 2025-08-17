@@ -1,9 +1,9 @@
 import { Link } from "react-router-dom";
+import { asset } from "../utils/asset";
 
-const BG = "/assets/img/blue.png";
-const DEGREE = "/assets/img/degree.png";  
+const BG = asset("assets/img/blue.png");
+const DEGREE = asset("assets/img/degree.png");
 
-/* ---------- Reusable bits ---------- */
 function Pill({ children }) {
   return (
     <span className="press2start inline-block rounded-lg border-4 border-black/70 bg-white/95 px-2.5 py-1 text-xs text-black">
@@ -57,7 +57,6 @@ function EducationCard({ school, degree, dates, location, bullets = [], coursewo
 
 /* --------------- Page ---------------- */
 export default function Education() {
-  // ✏️ Edit these items to your real data
   const items = [
     {
       school: "UCLA",
@@ -66,28 +65,36 @@ export default function Education() {
       dates: "2023–2025",
       bullets: [
         "Current coursework/research focused on ML for genomics and bioinformatics.",
-        "Part of BCT- Bruin Club Tennis",
+        "Part of BCT — Bruin Club Tennis",
       ],
       coursework: [
-        "C++ Programming & Data Structures", "Algorithms in Bioinformatics", "Probabilistic Genomic Modeling", "Bilogical Modeling", "Differential Equations", "Linear Algebra", "Intro to Probability", "Intro to Biostatistics"
+        "C++ Programming & Data Structures",
+        "Algorithms in Bioinformatics",
+        "Probabilistic Genomic Modeling",
+        "Biological Modeling",
+        "Differential Equations",
+        "Linear Algebra",
+        "Intro to Probability",
+        "Intro to Biostatistics",
       ],
     },
     {
-    school: "West Valley College",
-    location: "Saratoga, CA",
-    degree: "Associates of Biology",
-    dates: "2021–2023",
-    bullets: ["Played for West Valley College Women's tennis team", 
-        "Integral member of Dr. Michelle Geary's research cohort, collaboratively crafting insightful research posters on elevating avian handling protocols at CCFS (Coyote Creek Field Station) and Avian Research for Students."
-    ],
-    coursework: ["Chemistry", "Biology", "Introduction to Python", "Organicm Chemistry"],
-        },
+      school: "West Valley College",
+      location: "Saratoga, CA",
+      degree: "Associate of Biology",
+      dates: "2021–2023",
+      bullets: [
+        "Played for West Valley College Women's Tennis team.",
+        "Member of Dr. Michelle Geary's research cohort; co-authored posters on avian handling protocols at CCFS and student-led avian research.",
+      ],
+      coursework: ["Chemistry", "Biology", "Introduction to Python", "Organic Chemistry"],
+    },
   ];
 
   return (
     <div
       className="min-h-dvh w-full bg-cover bg-center"
-      style={{ backgroundImage: `url('${BG}')` }}
+      style={{ backgroundImage: `url(${BG})` }}
     >
       <div className="mx-auto max-w-[1100px] px-4 py-6 md:py-10">
         {/* Header */}
@@ -111,11 +118,15 @@ export default function Education() {
           >
             ← Back to Home
           </Link>
-          {/* Optional: replace with transcript/degree PDF if you have one */}
-          {/* <a href="/assets/img/transcript.pdf" target="_blank" rel="noopener noreferrer"
-             className="press2start rounded-lg border-4 border-black/70 bg-white px-4 py-2 text-black hover:scale-[1.03]">
-             View Transcript
-           </a> */}
+          {/* Example for transcript PDF if you add one to public/assets/img/ */}
+          { <a
+            href={asset("assets/img/transcript.pdf")}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="press2start rounded-lg border-4 border-black/70 bg-white px-4 py-2 text-black transition-transform hover:scale-[1.03] active:scale-95"
+          >
+            View Transcript
+          </a> }
         </div>
       </div>
     </div>

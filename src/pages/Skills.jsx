@@ -1,11 +1,10 @@
 import { Link } from "react-router-dom";
+import { asset } from "../utils/asset";
 
-const BG = "/assets/img/pink.png";            // pixel pink background
-const BALL = "/assets/img/tennisball.png";    // you already have this
-// If you also have a racket sprite, set it here; otherwise it will be ignored
-const RACKET = "/assets/img/racket.png";      // change or delete if you don't have it
+const BG = asset("assets/img/pink.png");          
+const BALL = asset("assets/img/tennisball.png");
+const RACKET = asset("assets/img/racket.png");    
 
-/* ------------ Reusable bits ------------ */
 function SkillTag({ children }) {
   return (
     <span
@@ -32,10 +31,7 @@ function SkillGroup({ title, items }) {
 
 /* ----------------- Page ---------------- */
 export default function Skills() {
-  // ✏️ Edit these lists to match your stack
-  const langs = [
-    "Python", "R", "C++", "JavaScript", "Bash",
-  ];
+  const langs = ["Python", "R", "C++", "JavaScript", "Bash"];
   const ml = [
     "PyTorch", "TensorFlow/Keras", "scikit-learn", "CNNs", "RNN/LSTM",
     "XGBoost", "Random Forest", "ElasticNet", "Cross-Validation",
@@ -45,18 +41,13 @@ export default function Skills() {
     "BioPython", "Bioconductor (R)", "k-mer analysis",
     "NGS / FASTQ", "RNA-seq preprocessing", "Alignment-free pipelines",
   ];
-  const tools = [
-    "NumPy", "Pandas", "Matplotlib", "Plotly", "Jupyter",
-    "Git/GitHub", "Linux", "Docker (basics)",
-  ];
-  const other = [
-    "Technical Writing", "Team Leadership", "Poster & Demo Presentations", "Collaboration", "Tennis" 
-  ];
+  const tools = ["NumPy", "Pandas", "Matplotlib", "Plotly", "Jupyter", "Git/GitHub", "Linux", "Docker (basics)"];
+  const other = ["Technical Writing", "Team Leadership", "Poster & Demo Presentations", "Collaboration", "Tennis"];
 
   return (
     <div
       className="min-h-dvh w-full bg-cover bg-center"
-      style={{ backgroundImage: `url('${BG}')` }}
+      style={{ backgroundImage: `url(${BG})` }}
     >
       <div className="mx-auto max-w-[1100px] px-4 py-6 md:py-10">
         {/* Header */}
@@ -65,10 +56,10 @@ export default function Skills() {
           <img
             src={RACKET}
             onError={(e) => (e.currentTarget.style.display = "none")}
-            alt=""
+            alt="Racket"
             className="h-12 w-12 select-none"
           />
-          <img src={BALL} alt="" className="h-8 w-8 -ml-2 select-none" />
+          <img src={BALL} alt="Tennis Ball" className="h-8 w-8 -ml-2 select-none" />
           <h1 className="pixel-title text-2xl md:text-3xl text-black">Skills</h1>
         </div>
 
@@ -91,7 +82,7 @@ export default function Skills() {
           </Link>
           <button
             className="pixel-title rounded-lg border-4 border-black/70 bg-white px-4 py-2 text-black transition-transform hover:scale-[1.03] active:scale-95"
-            onClick={() => alert('Swap this for a downloadable skills PDF or resume link.')}
+            onClick={() => alert("Swap this for a downloadable skills PDF or resume link.")}
           >
             Download
           </button>
