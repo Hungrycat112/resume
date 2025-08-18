@@ -1,8 +1,8 @@
 import { Link } from "react-router-dom";
 import { playClick } from "../components/clickSound";
 import { asset } from "../utils/asset";
-const CANVAS_IMG = asset("assets/img/canvas.jpg");
 
+const CANVAS_IMG = asset("assets/img/canvas.jpg");
 
 export default function Me() {
   return (

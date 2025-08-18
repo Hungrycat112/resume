@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import { playClick } from "./clickSound";
+import { asset } from "../utils/asset";
 
 export default function GlobalClickSound() {
   useEffect(() => {
