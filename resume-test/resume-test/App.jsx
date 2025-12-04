@@ -18,6 +18,8 @@ export default function App() {
       <Routes>
         <Route path="/" element={<Login />} />
         <Route path="/login" element={<Login />} />
+
+
         <Route path="/home" element={<Home />} />
         <Route path="/awards" element={<Awards />} />
         <Route path="/skills" element={<Skills />} />
@@ -28,6 +30,7 @@ export default function App() {
         <Route path="/me" element={<Me />} />
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
+
 
       {/* Background music player mounted globally */}
       <BackgroundAudio />
